@@ -8,8 +8,8 @@ export class BowlingGame {
   roll(pins: number): BowlingGame {
     return new BowlingGame([...this.pins, pins]);
   }
-  
-  
+
+
   score() {
     const FRAMES = 10;
     let score = 0;
@@ -31,23 +31,23 @@ export class BowlingGame {
     return score;
   }
 
-  scoreForFrame(firstRoll) {
+  private scoreForFrame(firstRoll: number) {
     return this.pins[firstRoll] + this.pins[firstRoll + 1];
   }
 
-  scoreForSpare(firstRoll) {
+  private scoreForSpare(firstRoll: number) {
     return 10 + this.pins[firstRoll + 2];
   }
 
-  isSpare(firstRoll) {
+  private isSpare(firstRoll: number) {
     return this.pins[firstRoll] + this.pins[firstRoll + 1] === 10;
   }
-  
-  scoreForStrike(firstRoll) {
+
+  private scoreForStrike(firstRoll: number) {
     return 10 + this.pins[firstRoll + 1] + this.pins[firstRoll + 2];
   }
 
-  isStrike(firstRoll) {
+  private isStrike(firstRoll: number) {
     return this.pins[firstRoll] === 10;
   }
 

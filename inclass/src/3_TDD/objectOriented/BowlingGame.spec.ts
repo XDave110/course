@@ -35,9 +35,9 @@ describe('Test Bowling Game Functionality', () => {
   });
 
   it('can roll a strike and the rest are 0', () => {
-    game = rollStrike(game) 
+    game = rollStrike(game)
     game = rollMany(game, 18, 0);
-    
+
     expect(game.score()).toBe(10)
   });
 
